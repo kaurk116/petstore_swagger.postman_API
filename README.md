@@ -26,18 +26,28 @@ pre request:
 const randomNumber = Math.floor(Math.random()*100+1)
 
 var randomString = Math.random().toString(36).substring(2, 8);
+
 //var emailid = "karam"+randomString+"@gmail.com";
+
 pm.environment.set("id" , randomNumber)
+
 pm.collectionVariables.set("username", randomString)
+
 pm.collectionVariables.set("firstName", randomString)
+
 pm.collectionVariables.set("lastName", randomString)
+
 pm.collectionVariables.set("email" , "karam"+randomString+"@gmail.com")
+
 pm.collectionVariables.set("password", randomString)
+
 pm.collectionVariables.set("phone", "8872682291")
+
 pm.collectionVariables.set("userStatus", 0);
 ********************
 post request:
 pm.test("Status code is 200", function () {
+
     pm.response.to.have.status(200);
 });
 console.log(pm.collectionVariables.get("username"));
@@ -47,11 +57,18 @@ console.log(pm.collectionVariables.get("username"));
   
 {
   "id": "{{id}}",
+
   "username": "{{username}}",
+  
   "firstName": "{{firstName}}",
+  
   "lastName": "{{lastName}}",
+  
   "email": "{{email}}",
+  
   "password": "{{password}}",
+  
   "phone": "{{phone}}",
+  
   "userStatus": {{userStatus}}
 }
